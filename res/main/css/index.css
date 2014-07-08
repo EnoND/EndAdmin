@@ -1,0 +1,296 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
+body{
+	background-color: #e4e6e9;
+    color: #393939;
+    /*font-family: 'Open Sans';*/
+    font-size: 13px;
+    line-height: 1.5;
+    min-height: 100%;
+    padding-bottom: 0;
+}
+.navbar-default{
+	background-color: #2980b9;
+	border:0;
+}
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus{
+	color: #FFF;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #FFF;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
+	background-color: #3498db;
+    color: #FFF;
+}
+.navbar-nav .open .dropdown-menu, .dropdown-menu li a{
+    background-color: #fff;
+}
+.main_container{
+    background: none;
+    position: relative;
+    padding: 0;
+}
+
+.container_shadow{
+    position: relative;
+    padding: 0;
+}
+.container_shadow:before{
+    box-shadow: 0px 0px 15px #B2B2B2;
+    border: 1px solid #ccc;
+    background-color: #FFF !important;
+    bottom: 0;
+    content: "";
+    display: block;
+    position: fixed;
+    max-width: inherit !important;
+    top: 0;
+    width: 100%;
+    z-index: -2;
+}
+.sidebar{
+    background-color: #f2f2f2;
+    float: left;
+    position: relative;
+    width: 189px;
+    padding: 0px;
+}
+.sidebar:before{
+    background-color: #f2f2f2;
+    bottom: 0;
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    width: 190px;
+    z-index: -1;
+    border-color: #ccc;
+    border-image: none;
+    border-style: solid;
+    border-width: 0 1px 0 0;
+}
+.bsMenu_mini.sidebar:before{
+    width:39px;
+}
+.container .sidebar{
+    margin-left: 1px;
+}
+.main_content{
+	margin-left: 190px;
+    margin-right: 0;
+    margin-top: 0;
+    min-height: 100%;
+    padding:0;
+}
+.bsMenu_mini.sidebar + .main_content {
+    margin-left: 39px;
+}
+.page_content{
+    /*background: #fff;*/
+    margin: 0;
+    padding: 0px;
+    padding: 8px 20px;
+}
+.breadcrumb{
+    border-color: #ccc;
+    border-image: none;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    margin-right: 1px;
+}
+.container .breadcrumb{
+    margin-left: 1px;
+}
+.container{
+    padding-left: 0;
+    padding-right: 0;
+}
+.navbar .container{
+    padding-left: 15px;
+}
+/*控制固定导航菜单等css=========================================*/
+/*固定顶部导航*/
+body.navbar-fixed {
+    padding-top: 51px;
+}
+.navbar-fixed-top, .navbar-fixed-bottom {
+    padding-right: 15px;
+    padding-left: 0px
+}
+.navbar-fixed-top .container{
+    padding-left: 22.5px;
+    padding-right: 7.5px;
+}
+/*固定左侧菜单*/
+.sidebar.fixed, .sidebar.sidebar_fixed {
+    left: auto;
+    position: fixed;
+    top: 51px;
+    z-index: 1029;
+}
+/*固定面包屑导航*/
+.breadcrumb.breadcrumb_fixed {
+    left: 190px;
+    position: fixed;
+    right: 0;
+    top: 51px;
+    z-index: 1028;
+}
+.bsMenu_mini + .main_content .breadcrumb.breadcrumb_fixed{
+    left: 39px;
+}
+.container_shadow.container_fixed{
+    padding-top: 37px;
+}
+body.navbar_breadcrumb_fixed {
+    /*padding-top: 87.5px;*/
+    padding-top: 51px;
+}
+.btn_scroll_up{
+    background-color: #2980b9;
+    color: #fff;
+    padding: 8px 10px;
+    border: 0 none;
+    bottom: 2px;
+    /*top: 150px;*/
+    position: absolute;
+    right: 2px;
+    z-index: 11;
+    display: none;
+}
+/*超窄 手机端*/
+@media (max-width: 767px) {
+    .main_content{
+        margin-left: 0 !important;
+    }
+    .sidebar{
+        display: none;
+        position: absolute !important;
+        top: 39px;
+        box-shadow: 5px 5px 5px #888888;
+        border-color: #ccc;
+        border-image: none;
+        border-style: solid;
+        border-width: 0 1px 1px 0;
+    }
+    .sidebar.fixed, .sidebar.sidebar_fixed{
+        position: absolute;
+        top: 39px ;
+        
+    }
+    .sidebar:before{
+        border: none !important;
+        width: 0 !important;
+    }
+    .bsMenu_mini > .bsMenu > li > a > .menu_text{
+        /*left: 33px;*/
+    }
+    .menu_toggle{
+        display: block !important;
+        position: absolute;
+        width: 40px;
+        line-height: 35px;
+        text-align: center;
+        top: 0px;
+        height: 37.5px;
+        border-color: #ccc;
+        border-image: none;
+        border-style: solid;
+        border-width: 1px 1px 1px 0;
+        background: #2980b9;
+        color: #fff;
+    }
+    .navbar-fixed .menu_toggle{
+        top: -1px;
+        line-height: 36px;
+    }
+    .main_content .breadcrumb.breadcrumb_fixed{
+        left: 39px;
+        padding-left: 15px;
+        position: relative;
+        top: 0;
+    }
+    .container_shadow.container_fixed {
+        padding-top: 0px;
+    }
+    .breadcrumb{
+        padding-left: 54px;
+    }
+    .navbar-toggle{
+        margin-right: 30px;
+    }
+    .navbar-fixed-top{
+        padding-right: 0px !important;
+    }
+    .navbar-fixed-top .container{
+        margin-right: 15px !important;
+    }
+    .container .navbar-header{
+        margin-left: -7.5px !important;
+        margin-right: -7.5px !important;
+    }
+    .navbar-fixed-top.container .navbar-header{
+        margin-left: -15px !important;
+        margin-right: -15px !important;   
+    }
+    .container .navbar-collapse {
+        margin-left: -7px !important;
+        margin-right: 10px !important;
+    }
+    .navbar-fixed-top .container .navbar-collapse{
+        margin-left: -15px !important;
+        margin-right: -15px !important;
+    }
+    .navbar-fixed-top .container .container {
+        padding-left: 22.5px;
+        padding-right: 7.5px;
+    }
+    .navbar-fixed-top .navbar-toggle{
+        margin-right: 15px;   
+    }
+    .bsMenu_collapse{
+        display: none;
+    }
+}
+/*窄屏*/
+@media (min-width: 768px) {
+    .container{
+        max-width: 750px;
+    }
+    .container .breadcrumb.breadcrumb_fixed {
+        left: auto !important;
+        right: auto !important;
+        width: 558px;
+    }
+    .container .bsMenu_mini + .main_content .breadcrumb.breadcrumb_fixed{
+        width: 558px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container{
+        max-width: 970px;
+    }
+    .container .breadcrumb.breadcrumb_fixed {
+        left: auto !important;
+        right: auto !important;
+        width: 778px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1170px;
+    }
+    .container .breadcrumb.breadcrumb_fixed {
+        left: auto !important;
+        right: auto !important;
+        width: 978px;
+    }
+    .container .bsMenu_mini + .main_content .breadcrumb.breadcrumb_fixed{
+        width: 1129px;
+    }
+}

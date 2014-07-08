@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>End Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="res/public/jquery/jquery.min.js"></script>
+  <link rel="stylesheet" href="res/public/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="res/main/css/end-theme.css" />
+  <link rel="stylesheet" href="res/main/menu/css/menu.css" />
+  <link rel="stylesheet" href="res/main/css/index.css" />
+
+  <!--[if lt IE 9]>
+    <script src="res/public/bootstrap/js/html5shiv.min.js"></script>
+    <script src="res/public/bootstrap/js/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <nav class="navbar navbar-default tool_border_radius_0 tool_margin_bottom_0" role="navigation">
+    <div class="navbar_container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          <span class="glyphicon glyphicon-leaf"></span>
+          End Admin
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#">Link</a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding-top: 10px;padding-bottom:5px;">
+              <img src="res/main/img/head.jpg" class="tool_head_img">
+              EnoND <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">menu1</a>
+              </li>
+              <li>
+                <a href="#">menu2</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="javascript:void(0);" onclick="alertSetting()">
+                  <span class="glyphicon glyphicon-cog"></span>
+                  系统设置
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse --> </div>
+  </nav>
+
+  <div id="container" class="container_shadow">
+    <div class="main_container">
+      <a href="javascript:;" title="menu" class="menu_toggle hide">
+        <span class="glyphicon glyphicon-align-justify"></span>
+      </a>
+      <!-- 左侧 -->
+      <div class="sidebar">
+        <!-- menu -->
+        <ul class="list-group tool_border_radius_0 bsMenu" id="menu">
+          <li class="list-group-item">
+            <a href="index.html" class="active">
+              <span class="glyphicon glyphicon-tower"></span>
+              <span class="menu_text">首页</span>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a data-href="typography.html">
+              <span class="glyphicon glyphicon-text-width"></span>
+              <span class="menu_text">文字排版</span>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="javascript:;" class="">
+              <span class="glyphicon glyphicon-phone"></span>
+              <span class="menu_text">
+                UI组件
+                <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+              </span>
+            </a>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <a>组件</a>
+              </li>
+              <li class="list-group-item">
+                <a>按钮 & 图标</a>
+              </li>
+              <li class="list-group-item">
+                <a>树菜单</a>
+              </li>
+              <li class="list-group-item">
+                <a>jQuery UI</a>
+              </li>
+              <li class="list-group-item">
+                <a>可拖拽表</a>
+              </li>
+              <li class="list-group-item">
+                <a>
+                  三级菜单
+                  <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+                </a>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <a>子项1</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a>子项2</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a>子项3</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <a href="javascript:;">
+              <span class="glyphicon glyphicon-th"></span>
+              <span class="menu_text">
+                表格
+                <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+              </span>
+            </a>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <a data-href="">简单 & 动态</a>
+              </li>
+              <li class="list-group-item">
+                <a>jqGrid plugin</a>
+              </li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <a href="javascript:;">
+              <span class="glyphicon glyphicon-edit"></span>
+              <span class="menu_text">
+                表单
+                <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+              </span>
+            </a>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <a data-href="page2.html">表单组件</a>
+              </li>
+              <li class="list-group-item">
+                <a>向导提示 & 验证</a>
+              </li>
+              <li class="list-group-item">
+                <a>编辑器</a>
+              </li>
+              <li class="list-group-item">
+                <a>文件上传</a>
+              </li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <a href="index.html">
+              <span class="glyphicon glyphicon-pushpin"></span>
+              <span class="menu_text">插件</span>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="index.html">
+              <span class="glyphicon glyphicon-calendar"></span>
+              <span class="menu_text">日历</span>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="index.html">
+              <span class="glyphicon glyphicon-picture"></span>
+              <span class="menu_text">相册</span>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a>
+              <span class="glyphicon glyphicon-tags"></span>
+              <span class="menu_text">
+                更多页面
+                <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+              </span>
+            </a>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <a>子项1</a>
+              </li>
+              <li class="list-group-item">
+                <a>子项2</a>
+              </li>
+              <li class="list-group-item">
+                <a>子项3</a>
+              </li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <a>
+              <span class="glyphicon glyphicon-file"></span>
+              <span class="menu_text">
+                其他页面
+                <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+              </span>
+            </a>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <a>子项1</a>
+              </li>
+              <li class="list-group-item">
+                <a>子项2</a>
+              </li>
+              <li class="list-group-item">
+                <a>子项3</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- 缩放控制按钮 -->
+        <div class="bsMenu_collapse">
+          <a href="javascript:;">
+            <span class="glyphicon glyphicon-resize-horizontal"></span>
+          </a>
+        </div>
+      </div>
+      <!-- 右侧内容 -->
+      <div class="main_content">
+        <!-- 面包屑导航 -->
+        <ol class="breadcrumb tool_margin_bottom_0 tool_border_radius_0">
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Library</a>
+          </li>
+          <li class="active">Data</li>
+        </ol>
+        <div class="page_content">
+          <blockquote>
+            <p>End Admin （开发中，不定期更新）</p>
+            <footer>力求做一个 通用、简约、实用、多功能并存的后台模版 放弃老版浏览器，仅支持高大上浏览器（chrome、firefox）。IE暂不考虑 </footer>
+          </blockquote>
+          <p>Mail：enond@qq.com  欢迎各位朋友提出意见或建议，不胜感激。^ ^</p>
+          <p>仿Ace Admin制作，绝非复制粘贴，只取其布局和样式配置的创意。大量采用最新的bootstrap 3.2 原生的样式，这样后期制作完全可参考BS <a href="http://v3.bootcss.com/" target="_blank">官方文档</a>。</p>
+          <p>采用seajs动态加载模块，大大提升了加载速度。（玉柏说再多的插件也不用担心加载缓慢拉！o(∩_∩)o 哈哈）</p>
+          <h3>功能简介</h3>
+          <ul>
+            <li><h5>右上角设置可以调整外观，并cookie保存设置</h5></li>
+            <li><h5>左侧菜单</h5>
+              <ul>
+                <li>
+                  <h5>理论上支持无限子菜单嵌套，但推荐最多3层。</h5>
+                </li>
+                <li>
+                  <h5>可以缩小到只有图标来扩大内容显示范围。</h5>
+                </li>
+                <li>
+                  <h5>适配手机端（超窄屏幕）</h5>
+                </li>
+                <li>
+                  <h5>友好的ajax加载内容页（改成iframe方式也非常好改，但不推荐。如需iframe请自行更改）</h5>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <p>以下内容是提供测试页面滚动的填充内容（可以在左上角设置某元素固定再滚动页面看看效果）</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+          <p>其他内容</p>
+        </div>
+      </div>
+
+      <a href="#" class="btn_scroll_up"><span class="glyphicon glyphicon-arrow-up"></span></a>
+    </div>
+  </div>
+
+  <!-- 隐藏层 -->
+
+  <div id="settingDialog" style="display:none;">
+    <div style="padding-left:30px;">
+      <form action="" role="form">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="ckbSetting" value="1">固定导航条</label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="ckbSetting" value="2">固定菜单</label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="ckbSetting" value="3">固定面包屑</label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="ckbSetting" value="4">切换窄屏</label>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe0cc01895beffe2858ecdf1d02f22824' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+
+  <script src="res/sea.js" id="seajsnode"></script>
+  <script src="res/config.js"></script>
+  <script>
+      seajs.use('bootstrap');
+      seajs.use("./res/main/js/index.js");
+  </script>
+</body>
+</html>

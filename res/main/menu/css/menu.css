@@ -1,0 +1,148 @@
+.bsMenu{
+    margin-bottom: 0;
+    position: relative;
+}
+.bsMenu .well{
+	border-radius: 0;
+	padding: 5px 0 5px 5px;
+}
+.bsMenu .list-group-item{
+	border-radius: 0;
+
+}
+.bsMenu li {
+    border-color: #fcfcfc -moz-use-text-color #e5e5e5;
+    border-image: none;
+    border-left: 0 none;
+    border-right: 0 none;
+    border-style: solid none;
+    border-width: 0 0 1px 0;
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.bsMenu li a.active{
+    border: none;
+	border-left: 4px solid #777;
+}
+.bsMenu li.open{
+    border-right: 2px solid #438EB9;
+}
+.bsMenu li.open a{
+    padding-right: 12px;
+}
+
+.bsMenu li.open > a .pull-right:before{
+	content: "\e113";
+}
+.bsMenu li a{
+	background-color: #f9f9f9;
+    display: block;
+    padding: 8px 16px 8px 8px;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    cursor: pointer;
+    text-shadow: none !important;
+    border-left: 4px solid transparent;
+}
+.bsMenu li a:hover{
+	border-left: 4px solid #777;
+}
+.bsMenu li a > .glyphicon{
+    background-color: #f5f5f5;
+    list-style: none outside none;
+}
+.bsMenu li > span{
+	background-color: #f9f9f9;
+    display: block;
+    padding: 0 16px 0 7px;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    text-shadow: none !important;
+}
+
+/*下级目录*/
+.submenu{	
+	display: none;
+	padding: 5px;
+	margin-bottom: 0;
+	position: relative;
+}
+.submenu > li{
+	border-color: #ccc;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    margin-bottom: -1px;
+}
+
+/*缩放按钮*/
+.bsMenu_collapse{
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 3px 0;
+    position: relative;
+    text-align: center;
+}
+.bsMenu_collapse span{
+    background-color: #f3f3f3;
+    border-radius: 100%;
+    border: 1px solid #C1C1C1;
+    padding: 3px 0 0 1px;
+    min-width: 20px;
+    height: 20px;
+}
+.bsMenu_collapse:before{
+    border-top: 1px solid #C1C1C1;
+    content: "";
+    display: inline-block;
+    height: 0;
+    left: 15px;
+    position: absolute;
+    right: 15px;
+    top: 13px;
+}
+
+/*缩放样式*/
+.bsMenu_mini.sidebar {
+    width: 38px;
+}
+.bsMenu_mini > .bsMenu > li > a > .menu_text{
+    display: none;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    height: 30px;
+    box-shadow: 5px 5px 5px #888888;
+    height: 36px;
+    left: 33px;
+    line-height: 36px;
+    padding-left: 12px;
+    position: absolute;
+    top: 0px;
+    width: 174px;
+    z-index: 121;
+    padding-right: 16px;
+}
+.bsMenu_mini > .bsMenu > li > a > .menu_text > .pull-right{
+    line-height: 36px;
+}
+.bsMenu_mini .bsMenu > li > ul{
+    display: none;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 5px #888888;
+    left: 36px;
+    position: absolute;
+    top: 36px;
+    width: 175px;
+    z-index: 121;
+}
+.bsMenu_mini .bsMenu> li:hover .menu_text{
+    display: block;
+}
+.bsMenu_mini .bsMenu > li:hover > ul {
+    display: block;
+}
