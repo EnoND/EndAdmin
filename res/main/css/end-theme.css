@@ -32,3 +32,8 @@ body{
 .page-header{
     margin: 10px 0;
 }
+
+/*无用 只是隐藏 百度统计的图标*/
+body>a{
+    display: none;
+}
