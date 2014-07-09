@@ -35,15 +35,21 @@
         <tbody>
           <tr>
             <td>1</td>
-            <td>seajs</td>
+            <td>seajs 2.3</td>
             <td><a href="http://seajs.org/docs/" target="_blank">http://seajs.org/docs/</a></td>
             <td>模块化开发</td>
           </tr>
           <tr>
             <td>2</td>
-            <td>layer</td>
+            <td>layer 1.8.3</td>
             <td><a href="http://sentsin.com/jquery/layer/" target="_blank">http://sentsin.com/jquery/layer/</a></td>
             <td>一个让你想到即可做到的web弹窗/层 解决方案</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Zero Clipboard 2.1.5</td>
+            <td><a href="http://zeroclipboard.org/" target="_blank">http://zeroclipboard.org/</a></td>
+            <td>flash 夸浏览器 复制插件（BS 官网就是用的这个）</td>
           </tr>
         </tbody>
 
@@ -52,9 +58,23 @@
     
     <div class="alert alert-info" role="alert">关于插件的使用说明，请自行参照官网文档</div>
   </div>
+  
+  <script>
+  //<button id="copy-button" data-clipboard-text="Copy Me!" title="Click to copy me.">Copy to Clipboard</button>
+  // seajs.use(['zeroClipboard'], function(zero){
+  //   var client = new ZeroClipboard( document.getElementById("copy-button") );
 
-  <script src="res/sea.js" id="seajsnode"></script>
-  <script src="res/config.js"></script>
-  <script>// seajs.use('bootstrap');</script>
+  //   client.on("ready", function(readyEvent){
+  //      alert("ZeroClipboard SWF is ready!");
+  //     client.on( "aftercopy", function( event ) {
+  //       // `this` === `client`
+  //       // `event.target` === the element that was clicked
+  //       event.target.style.display = "none";
+  //       alert("Copied text to clipboard: " + event.data["text/plain"]);
+  //     });
+  //   });
+  // });
+    
+  </script>
 </body>
 </html>

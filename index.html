@@ -82,10 +82,17 @@
             </a>
           </li>
           <li class="list-group-item">
-            <a href="typography.html" data-ajax="true">
-              <span class="glyphicon glyphicon-text-width"></span>
-              <span class="menu_text">文字排版</span>
+            <a>
+              <span class="glyphicon glyphicon-pushpin"></span>
+              <span class="menu_text">插件列表
+              <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+              </span>
             </a>
+            <ul class="list-group">
+              <li class="list-group-item"><a href="plugs.html" data-ajax="true">插件列表</a></li>
+              <li class="list-group-item"><a href="">第三方插件说明</a></li>
+              <li class="list-group-item"><a href="">EndAdmin原创插件说明</a></li>
+            </ul>
           </li>
           <li class="list-group-item">
             <a href="javascript:;" class="">
@@ -97,19 +104,10 @@
             </a>
             <ul class="list-group">
               <li class="list-group-item">
-                <a>组件</a>
-              </li>
-              <li class="list-group-item">
-                <a>按钮 & 图标</a>
+                <a>弹窗</a>
               </li>
               <li class="list-group-item">
                 <a>树菜单</a>
-              </li>
-              <li class="list-group-item">
-                <a>jQuery UI</a>
-              </li>
-              <li class="list-group-item">
-                <a>可拖拽表</a>
               </li>
               <li class="list-group-item">
                 <a>
@@ -169,12 +167,6 @@
                 <a>文件上传</a>
               </li>
             </ul>
-          </li>
-          <li class="list-group-item">
-            <a href="plugs.html" data-ajax="true">
-              <span class="glyphicon glyphicon-pushpin"></span>
-              <span class="menu_text">插件</span>
-            </a>
           </li>
           <li class="list-group-item">
             <a href="index.html">
@@ -241,13 +233,7 @@
       <div class="main_content">
         <!-- 面包屑导航 -->
         <ol class="breadcrumb tool_margin_bottom_0 tool_border_radius_0">
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">Library</a>
-          </li>
-          <li class="active">Data</li>
+          <li class="active">首页</li>
         </ol>
         <div class="page_content">
           <blockquote>
@@ -257,14 +243,18 @@
             </footer>
           </blockquote>
           <p>Mail：enond@qq.com  欢迎各位朋友提出意见或建议，不胜感激。^ ^</p>
+          <p>End Admin的宗旨就是提供一个后台的框架模版，尽量不去修改bootstrap的原生样式。如需其他样式请自行覆盖即可</p>
           <p>
             仿Ace Admin制作，绝非复制粘贴，只取其布局和样式配置的创意。大量采用最新的bootstrap 3.2 原生的样式，这样后期制作完全可参考BS
             <a href="http://v3.bootcss.com/" target="_blank">官方文档</a>
             。
           </p>
           <p>
+            只提供特殊的组件或插件的演示及教程。
+          </p>
+          <p>
             采用
-            <a href="http://seajs.org/docs/" target="_blank">seajs</a>
+            <a href="http://seajs.org/docs/" target="_blank">seajs 2.3</a>
             动态加载模块，大大提升了加载速度。（玉柏说再多的插件也不用担心加载缓慢拉！o(∩_∩)o 哈哈）
           </p>
           <p>
@@ -387,6 +377,7 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 
   <script src="res/sea.js" id="seajsnode"></script>
   <script src="res/config.js"></script>
+  <!-- // <script src="res/public/zeroClipboard/ZeroClipboard.min.js"></script> -->
   <script>
       seajs.use('bootstrap');
       seajs.use("./res/main/js/index.js");
