@@ -16,7 +16,8 @@ define(function(require, exports, module){
 		obj.addClass("bsMenu");
 		obj.find("li ul").addClass("submenu well");
 		obj.find(".active").parents("ul").addClass("open");
-		obj.find("li a").click(function(){ toggleItem($(this))} );		//绑定单击事件
+		obj.find("li a").mouseup(function(){ toggleItem($(this)); });
+		obj.find("li a[data-ajax='true']").click(function(){ return false; });		//绑定单击事件
 		$(".bsMenu_collapse a").click(function(){ 
 			cookie("menu_mini") === "false"?cookie("menu_mini", "true"):cookie("menu_mini", "false");
 			mini(); 
@@ -87,8 +88,14 @@ define(function(require, exports, module){
 		});
 	}
 
+	//根据href的值来选中 菜单中的某一项
+	var selectItem = function(url){
+		toggleItem($(".bsMenu a[href='"+url+"']"));
+	}
+
 	return {
 		init: init,
-		mini: mini
+		mini: mini,
+		selectItem: selectItem
 	}
 });

@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="res/main/css/index.css" />
 
   <!--[if lt IE 9]>
-    <script src="res/public/bootstrap/js/html5shiv.min.js"></script>
-    <script src="res/public/bootstrap/js/respond.min.js"></script>
+  <script src="res/public/bootstrap/js/html5shiv.min.js"></script>
+  <script src="res/public/bootstrap/js/respond.min.js"></script>
   <![endif]-->
 
 </head>
@@ -82,7 +82,7 @@
             </a>
           </li>
           <li class="list-group-item">
-            <a data-href="typography.html">
+            <a href="typography.html" data-ajax="true">
               <span class="glyphicon glyphicon-text-width"></span>
               <span class="menu_text">文字排版</span>
             </a>
@@ -171,7 +171,7 @@
             </ul>
           </li>
           <li class="list-group-item">
-            <a href="index.html">
+            <a href="plugs.html" data-ajax="true">
               <span class="glyphicon glyphicon-pushpin"></span>
               <span class="menu_text">插件</span>
             </a>
@@ -252,15 +252,35 @@
         <div class="page_content">
           <blockquote>
             <p>End Admin （开发中，不定期更新）</p>
-            <footer>力求做一个 通用、简约、实用、多功能并存的后台模版 放弃老版浏览器，仅支持高大上浏览器（chrome、firefox）。IE暂不考虑 </footer>
+            <footer>
+              力求做一个 通用、简约、实用、多功能并存的后台模版 放弃老版浏览器，仅支持高大上浏览器（chrome、firefox）。IE暂不考虑
+            </footer>
           </blockquote>
           <p>Mail：enond@qq.com  欢迎各位朋友提出意见或建议，不胜感激。^ ^</p>
-          <p>仿Ace Admin制作，绝非复制粘贴，只取其布局和样式配置的创意。大量采用最新的bootstrap 3.2 原生的样式，这样后期制作完全可参考BS <a href="http://v3.bootcss.com/" target="_blank">官方文档</a>。</p>
-          <p>采用seajs动态加载模块，大大提升了加载速度。（玉柏说再多的插件也不用担心加载缓慢拉！o(∩_∩)o 哈哈）</p>
+          <p>
+            仿Ace Admin制作，绝非复制粘贴，只取其布局和样式配置的创意。大量采用最新的bootstrap 3.2 原生的样式，这样后期制作完全可参考BS
+            <a href="http://v3.bootcss.com/" target="_blank">官方文档</a>
+            。
+          </p>
+          <p>
+            采用
+            <a href="http://seajs.org/docs/" target="_blank">seajs</a>
+            动态加载模块，大大提升了加载速度。（玉柏说再多的插件也不用担心加载缓慢拉！o(∩_∩)o 哈哈）
+          </p>
+          <p>
+            <a href="https://github.com/EnoND/EndAdmin">
+              <span class="glyphicon glyphicon-download-alt"></span>
+              最新版本下载
+            </a>
+          </p>
+          <p>本系统使用的所有插件：<a href="plugs.html" data-ajax="true">点击查看</a></p>
           <h3>功能简介</h3>
           <ul>
-            <li><h5>右上角设置可以调整外观，并cookie保存设置</h5></li>
-            <li><h5>左侧菜单</h5>
+            <li>
+              <h5>右上角设置可以调整外观，并cookie保存设置</h5>
+            </li>
+            <li>
+              <h5>左侧菜单</h5>
               <ul>
                 <li>
                   <h5>理论上支持无限子菜单嵌套，但推荐最多3层。</h5>
@@ -329,7 +349,9 @@
         </div>
       </div>
 
-      <a href="#" class="btn_scroll_up"><span class="glyphicon glyphicon-arrow-up"></span></a>
+      <a href="#" class="btn_scroll_up">
+        <span class="glyphicon glyphicon-arrow-up"></span>
+      </a>
     </div>
   </div>
 
@@ -362,7 +384,6 @@
 var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F13ef926243be32f9387f6f8f51f6e30f' type='text/javascript'%3E%3C/script%3E"));
 </script>
-
 
   <script src="res/sea.js" id="seajsnode"></script>
   <script src="res/config.js"></script>

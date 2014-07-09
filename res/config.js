@@ -33,11 +33,13 @@ var _getArgs = function(name){
 seajs.config({
   alias: {
     // 'jquery': './res/public/jquery/jquery.min',
-    'jquery_cookie': 'public/jquery/jquery.cookie',
-    'bootstrap': 'public/bootstrap/js/bootstrap.min',
-    'layer':'public/layer/layer.min',
-    'alert': 'main/alert/alert',
-    'cookieSetting': 'main/js/cookieSetting'
+    'jquery_cookie': 'public/jquery/jquery.cookie',   //cookie插件
+    'bootstrap': 'public/bootstrap/js/bootstrap.min',   //BS
+    'layer':'public/layer/layer.min',   //弹窗
+    'alert': 'main/alert/alert',    //封装的弹窗
+    'cookieSetting': 'main/js/cookieSetting',   //处理外观设置
+    'menu': 'main/menu/js/menu',   //左侧菜单
+    'alink': 'main/js/alink'      //处理a标签的ajax跳转
   },
   // base:_getArgs("path")||"",
   // base:"/admin",

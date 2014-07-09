@@ -7,20 +7,21 @@ $(function(){
 define(function(require, exports, module) {
 	// var $ = require('jquery');
   //初始化系统设置
-      seajs.use(['cookieSetting'],function(setting){
+      seajs.use(['cookieSetting', 'alink'],function(setting, alink){
         setting.init();
         setting.setting();
+        alink.init({scope:'.main_content'});
       });
 
-	//菜单加载，并处理单击事件
+	   //菜单加载，并处理单击事件
       seajs.use(["./res/main/menu/js/menu", 'cookieSetting','layer'], function(menu, setting, layer){
         menu.init({
           selector: "#menu",
           itemClick:function(obj){
-            if(obj.data("href")){
+            if(obj.attr("href")){
               var index = layer.layer.load(null,0);
               $(".main_content").hide();
-              $(".main_content").load(obj.data("href"),function(){      //ajax页面加载
+              $(".main_content").load(obj.attr("href"),function(){      //ajax页面加载
                 layer.layer.close(index);
                 setting.setting();
                 $(".main_content").show();
