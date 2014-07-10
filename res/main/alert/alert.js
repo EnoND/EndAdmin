@@ -3,6 +3,7 @@ define(function(require, exports, module){
 	// var $ = require("jquery");
 	var layer = require("layer").layer;
 
+	//html弹窗，传入html内容
 	var html = function(title, html, width, height, yes, no){
 		var btns = 0;
 		if(yes){btns++;}
@@ -24,7 +25,7 @@ define(function(require, exports, module){
 		    }
 		});
 	}
-
+	// dom弹窗，只需selecter
 	var dom = function(title, dom, width, height, yes, no){
 		var btns = 0;
 		if(yes){btns++;}
@@ -51,10 +52,22 @@ define(function(require, exports, module){
 		});
 	}
 
+	//tip 封装
+	var tip = function(content, obj, parme){
+		var parme = parme || {};
+		var defaults = {
+	        style: ['background-color:#000; color:#fff', '#000'],
+	        maxWidth:150
+	    };
+	    defaults = $.extend(defaults, parme);
+		return layer.tips(content, obj, defaults);
+	}
+
 	//接口
 	return {
 		layer: layer,
 		html: html,
+		tip: tip,
 		dom: dom
 	}
 });

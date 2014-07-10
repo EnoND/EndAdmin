@@ -40,6 +40,7 @@ seajs.config({
     'cookieSetting': 'main/js/cookieSetting',   //处理外观设置
     'menu': 'main/menu/js/menu',   //左侧菜单
     'zeroClipboard': 'public/zeroClipboard/ZeroClipboard.min',   //flash 复制
+    'highlight': 'public/highlight/highlight.pack',   //代码着色
     'alink': 'main/js/alink'      //处理a标签的ajax跳转
   },
   // base:_getArgs("path")||"",

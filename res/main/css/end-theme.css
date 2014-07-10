@@ -32,7 +32,30 @@ body{
 .page-header{
     margin: 10px 0;
 }
-
+.highlight{
+    position: relative;
+}
+.highlight pre{
+    padding: 0;
+}
+.highlight code{
+    background: none;
+    padding: 0;
+}
+.btn_copy{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px 0;
+    color: #777;
+    cursor: pointer;
+    display: block;
+    font-size: 12px;
+    padding: 5px 8px;
+    position: absolute;
+    /*right: 0;*/
+    top: 0;
+    z-index: 10;
+}
 /*无用 只是隐藏 百度统计的图标*/
 body>a{
     display: none;
