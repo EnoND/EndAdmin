@@ -188,20 +188,27 @@ body.navbar_breadcrumb_fixed {
     .bsMenu_mini > .bsMenu > li > a > .menu_text{
         /*left: 33px;*/
     }
-    .menu_toggle{
-        display: block !important;
-        position: absolute;
-        width: 40px;
-        line-height: 35px;
+    #btnMenu{
+        float: left;
+        margin-left: 15px;
+    }
+    #btnMenu:focus{
+        background: none;
+    }
+    #btnMenu .active{
+        box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.25) inset;
+    }
+    .navbar-brand {
+        float: none;
+        /*float: left;*/
+        font-size: 18px;
+        height: 50px;
+        line-height: 50px;
+        padding: 0;
+        margin: 0 0 0 0px;
+        width: 100%;
+        display: block;
         text-align: center;
-        top: 0px;
-        height: 37.5px;
-        border-color: #ccc;
-        border-image: none;
-        border-style: solid;
-        border-width: 1px 1px 1px 0;
-        background: #2980b9;
-        color: #fff;
     }
     .navbar-fixed .menu_toggle{
         top: -1px;
@@ -216,11 +223,8 @@ body.navbar_breadcrumb_fixed {
     .container_shadow.container_fixed {
         padding-top: 0px;
     }
-    .breadcrumb{
-        padding-left: 54px;
-    }
     .navbar-toggle{
-        margin-right: 30px;
+        /*margin-right: 30px;*/
     }
     .navbar-fixed-top{
         padding-right: 0px !important;

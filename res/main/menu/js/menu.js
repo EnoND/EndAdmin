@@ -27,8 +27,8 @@ define(function(require, exports, module){
 
 		//监听浏览器宽度变化
 		// resize();
-		$(".menu_toggle").click(function(){
-			$(".sidebar").is(":hidden")?$(".sidebar").show():$(".sidebar").removeAttr("style");
+		$("#btnMenu").click(function(){
+			$(".sidebar").is(":hidden")?($(".sidebar").show(),$(this).addClass("active")):($(".sidebar").removeAttr("style"),$(this).removeClass("active"));
 			$(".sidebar").removeClass("bsMenu_mini");
 			$(".bsMenu > li").unbind();		//移除事件
 			cookie("menu_mini", false);
