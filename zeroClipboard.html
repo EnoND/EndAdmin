@@ -61,7 +61,9 @@
   </div>
 
 <!-- HTML to write -->
-<a id="btntest" href="javascript:;" data-toggle="tooltip" title="Some tooltip text!">Hover over me</a>
+<a name="btntest" href="javascript:;" data-toggle="tooltip" title="Some tooltip text!">Hover over me</a>
+<a name="btntest" href="javascript:;" data-toggle="tooltip" title="Some tooltip text!">Hover over me</a>
+<a name="btntest" href="javascript:;" data-toggle="tooltip" title="Some tooltip text!">Hover over me</a>
 
   <h2>使用2</h2>
   <div class="highlight">
@@ -95,7 +97,7 @@
   if(window.location.protocol === "file:"){
     $("#alertDanger").show();
   }
-  seajs.use(['zeroClipboard', 'highlight', './res/main/js/end_copy.js'], function(zero, highlight, endCopy){
+  seajs.use(['zeroClipboard', 'highlight', 'endCopy'], function(zero, highlight, endCopy){
     var client = new ZeroClipboard( document.getElementById("copy-button") );   //copy-button是复制按钮的id
 
     client.on("ready", function(readyEvent){    //加载事件
@@ -106,30 +108,28 @@
       });
 
       client.on("aftercopy", function(event){   //点击按钮之后 触发 事件
-
         $("#copyShow").append(event.data["text/plain"]+"<br/>");    //event.data["text/plain"] 获取该格式的内容
       });
     });
 
     //代码着色 初始化
     $('pre code').each(function(i, block) {
-      console.info(block);
       highlight.highlightBlock(block);
     });
 
     //统一初始化 代码复制
-    endCopy.init();
+    endCopy.init({btn:'span.btn_copy'});
 
-    var copyTip;
-    seajs.use(['alert'], function(myDialog){
-      $("#btntest").mouseenter(function(){
-        copyTip = myDialog.tip("点击复制", this);
-      }).mouseleave(function(){
-        myDialog.layer.close(copyTip);
-      }).click(function(){
-        copyTip = myDialog.tip("test", this);
-      });
-    });
+    // var copyTip;
+    // seajs.use(['alert'], function(myDialog){
+    //   $("span.btn_copy").mouseenter(function(){
+    //     copyTip = myDialog.tip("点击复制", this);
+    //   }).mouseleave(function(){
+    //     myDialog.layer.close(copyTip);
+    //   }).click(function(){
+    //     copyTip = myDialog.tip("test", this);
+    //   });
+    // });
       
 
   });

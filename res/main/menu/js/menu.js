@@ -25,13 +25,9 @@ define(function(require, exports, module){
 		//初始化mini
 		mini();
 
-		//监听浏览器宽度变化
-		// resize();
+		//手机版 打开菜单按钮
 		$("#btnMenu").click(function(){
-			$(".sidebar").is(":hidden")?($(".sidebar").show(),$(this).addClass("active")):($(".sidebar").removeAttr("style"),$(this).removeClass("active"));
-			$(".sidebar").removeClass("bsMenu_mini");
-			$(".bsMenu > li").unbind();		//移除事件
-			cookie("menu_mini", false);
+			togglePhoneMenu();
 		});
 	}
 
@@ -93,9 +89,18 @@ define(function(require, exports, module){
 		toggleItem($(".bsMenu a[href='"+url+"']"));
 	}
 
+	//手机版 打开或关闭菜单方法
+	var togglePhoneMenu = function(){
+		$(".sidebar").is(":hidden")?($(".sidebar").show(),$(this).addClass("active")):($(".sidebar").removeAttr("style"),$(this).removeClass("active"));
+		$(".sidebar").removeClass("bsMenu_mini");
+		$(".bsMenu > li").unbind();		//移除事件
+		cookie("menu_mini", false);
+	}
+
 	return {
 		init: init,
 		mini: mini,
-		selectItem: selectItem
+		selectItem: selectItem,
+		togglePhoneMenu: togglePhoneMenu
 	}
 });

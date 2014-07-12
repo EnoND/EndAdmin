@@ -3,20 +3,25 @@
 */
 define(function(require, exports, module){
   var hijs = require('highlight');
+  var myDialog = require('alert');
   // var layer = require('layer').layer;
   // var menu = require('menu');
 
   var defaults = {
-    scope: ''
+    btn: '.btn_copy'    //复制按钮的选择器
   };
+
+  var copyTip;    //复制按钮的提示
   //加载
-  function init(){
+  function init(options){
+    var options = $.extend(defaults, options);
     // var client = new ZeroClipboard( document.getElementById("btn_copy") );   //copy-button是复制按钮的id
-    var client = new ZeroClipboard($(".btn_copy"));
+    var btn = $(options.btn);
+    var client = new ZeroClipboard(btn);
     client.on("ready", function(readyEvent){    //加载事件
       client.on( "copy", function( event ) {    //点击按钮事件
-        console.info(event);
-        console.info($(event.target).next("pre").find("code").text());
+        // console.info(event);
+        // console.info($(event.target).next("pre").find("code").text());
         ZeroClipboard.setData({
           'text/plain': $(event.target).next("pre").find("code").text()   //动态设置要复制的内容
         });
@@ -25,9 +30,25 @@ define(function(require, exports, module){
       client.on("aftercopy", function(event){   //点击按钮之后 触发 事件
         // $("#copyShow").append(event.data["text/html"]+"");    //event.data["text/html"] 获取该格式的内容
 
-        console.info(event.data["text/plain"]);
+        // console.info(event.data["text/plain"]);
+        var msg = "失败";
+        if(event.success["text/plain"]){
+          msg = "复制成功";
+        }
+        console.info(msg);
+        copyTip = myDialog.tip(msg, nowBtn);
+        
       });
     });
+
+    var nowBtn;
+    $(options.btn).mouseenter(function(){
+      nowBtn = this;
+      copyTip = myDialog.tip("点击复制", nowBtn);
+    }).mouseleave(function(){
+      console.info("leave");
+      myDialog.layer.close(copyTip);
+    })
   }
 
   return {

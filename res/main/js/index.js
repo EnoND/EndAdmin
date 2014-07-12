@@ -26,8 +26,8 @@ define(function(require, exports, module) {
                 layer.layer.close(index);
                 setting.setting();
                 $(".main_content").show();
-                if(!status === "success"){    //如果加载成功 再关闭菜单（也是防止打开子菜单时误关闭了菜单）
-                  $(".menu_toggle").is(":hidden")?0:$(".sidebar").hide();
+                if(status === "success"){    //如果加载成功 再关闭菜单（也是防止打开子菜单时误关闭了菜单）
+                  menu.togglePhoneMenu();
                 }
               });
               
