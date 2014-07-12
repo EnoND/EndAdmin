@@ -189,14 +189,23 @@ body.navbar_breadcrumb_fixed {
         /*left: 33px;*/
     }
     #btnMenu{
-        float: left;
-        margin-left: 15px;
+        /*float: left;*/
+        position: absolute;
+        left: 15px;
+        /*margin-left: 15px;*/
     }
-    #btnMenu:focus{
+    #btnMenu:focus, #btnMenu:hover{
         background: none;
     }
-    #btnMenu .active{
+    #btnMenu.active{
         box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.25) inset;
+        background-color: #ddd;
+    }
+    button.navbar-toggle{
+        float: none;
+        position: absolute;
+        right: 0;
+        /*margin: 0;*/
     }
     .navbar-brand {
         float: none;
@@ -215,8 +224,8 @@ body.navbar_breadcrumb_fixed {
         line-height: 36px;
     }
     .main_content .breadcrumb.breadcrumb_fixed{
-        left: 39px;
-        padding-left: 15px;
+        left: 0;
+        /*padding-left: 15px;*/
         position: relative;
         top: 0;
     }

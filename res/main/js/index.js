@@ -18,15 +18,19 @@ define(function(require, exports, module) {
         menu.init({
           selector: "#menu",
           itemClick:function(obj){
-            if(obj.attr("href")){
+            var href = obj.attr("href");
+            if(href && href != "" && href != "#" && href != "javascript:;" && href != "javascript:void(0);"){ //判断是否合法 
               var index = layer.layer.load(null,0);
               $(".main_content").hide();
-              $(".main_content").load(obj.attr("href"),function(){      //ajax页面加载
+              $(".main_content").load(obj.attr("href"),function(response,status,xhr){      //ajax页面加载
                 layer.layer.close(index);
                 setting.setting();
                 $(".main_content").show();
+                if(!status === "success"){    //如果加载成功 再关闭菜单（也是防止打开子菜单时误关闭了菜单）
+                  $(".menu_toggle").is(":hidden")?0:$(".sidebar").hide();
+                }
               });
-              $(".menu_toggle").is(":hidden")?0:$(".sidebar").hide();
+              
             }
           }
         });
