@@ -273,6 +273,9 @@
               最新版本下载
             </a>
           </p>
+          <p id="ifrCommits" style="height:300px;overflow-y:auto;">
+            <iframe src="https://github.com/EnoND/EndAdmin/commits/gh-pages" frameborder="0" style="height:300px;overflow-y:auto;"></iframe>
+          </p>
           <p>本系统使用的所有插件：<a href="plugs.html" data-ajax="true">点击查看</a></p>
           <h3>功能简介</h3>
           <ul>
@@ -391,6 +394,25 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
   <script>
       seajs.use('bootstrap');
       seajs.use("./res/main/js/index.js");
+      $(function(){
+        // $("ifrCommits").load("http://github.com/EnoND/EndAdmin/commits/gh-pages");
+        // $.ajax({
+        //   url:"https://github.com/EnoND/EndAdmin/commits/gh-pages",
+        //   success: function(data){
+        //     alert(data);
+        //   },
+        //   dataType : "jsonp"
+        // });
+        // $.getJSON("https://github.com/EnoND/EndAdmin/commits/gh-pages",function(result){
+        //   console.info(result);
+        //   // $.each(result, function(i, field){
+        //   //   $("div").append(field + " ");
+        //   // });
+        // });
+         // $.getScript("https://github.com/EnoND/EndAdmin/commits/gh-pages", function(data){
+         //    alert(data);
+         //  });
+      });
   </script>
 </body>
 </html>
