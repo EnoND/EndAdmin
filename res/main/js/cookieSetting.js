@@ -9,7 +9,9 @@ define(function(require, exports, module){
     cookie("breadcrumb")?"":cookie("breadcrumb", false);
     cookie("container")?"":cookie("container", false);
     cookie("menu_mini")?"":cookie("menu_mini", false);
-    // console.info(cookie("navbar"));
+    console.info($(window).width());
+    //cookie("phone")?"":cookie("phone", (($(window).width() <= 768)?true:false));
+    cookie("phone")?"":cookie("phone", true);
   }
 
   //设置悬浮

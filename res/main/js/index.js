@@ -14,7 +14,7 @@ define(function(require, exports, module) {
       });
 
 	   //菜单加载，并处理单击事件
-      seajs.use(["./res/main/menu/js/menu", 'cookieSetting','layer'], function(menu, setting, layer){
+      seajs.use(["./res/main/menu/js/menu", 'cookieSetting','layer','jquery_cookie'], function(menu, setting, layer, cookie){
         menu.init({
           selector: "#menu",
           itemClick:function(obj){
@@ -26,7 +26,8 @@ define(function(require, exports, module) {
                 layer.layer.close(index);
                 setting.setting();
                 $(".main_content").show();
-                if(status === "success"){    //如果加载成功 再关闭菜单（也是防止打开子菜单时误关闭了菜单）
+                console.info(cookie("phone"));
+                if(status === "success" && cookie("phone") === "true"){    //如果加载成功 再关闭菜单（也是防止打开子菜单时误关闭了菜单）
                   menu.togglePhoneMenu();
                 }
               });

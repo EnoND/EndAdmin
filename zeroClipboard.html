@@ -59,37 +59,6 @@
       </code>
     </pre>
   </div>
-
-<!-- HTML to write -->
-<a name="btntest" href="javascript:;" data-toggle="tooltip" title="Some tooltip text!">Hover over me</a>
-<a name="btntest" href="javascript:;" data-toggle="tooltip" title="Some tooltip text!">Hover over me</a>
-<a name="btntest" href="javascript:;" data-toggle="tooltip" title="Some tooltip text!">Hover over me</a>
-
-  <h2>使用2</h2>
-  <div class="highlight">
-    <span class="btn_copy">复制</span>
-    <pre>
-      <code class="js">
-      但是法撒旦发射点发阿萨德阿斯蒂芬阿萨德
-        seajs.use(['zeroClipboard'], function(zero){
-          var client = new ZeroClipboard( document.getElementById("copy-button") );   //copy-button是复制按钮的id
-    
-          client.on("ready", function(readyEvent){    //加载事件
-            client.on( "copy", function( event ) {    //点击按钮事件
-              ZeroClipboard.setData({
-                'text/plain': $("#txtCopy").val()   //动态设置要复制的内容
-              });
-            });
-    
-            client.on("aftercopy", function(event){   //点击按钮之后 触发 事件
-              $("#copyShow").append(event.data["text/plain"]+"<br/>");    //event.data["text/plain"] 获取该格式的内容
-            });
-          });
-        });
-      </code>
-    </pre>
-  </div>
-  
 </div>
 
 
