@@ -4,14 +4,15 @@ define(function(require, exports, module){
 
   //加载
   function init(){
-    cookie("navbar")?"":cookie("navbar", false);
-    cookie("menu")?"":cookie("menu", false);
-    cookie("breadcrumb")?"":cookie("breadcrumb", false);
-    cookie("container")?"":cookie("container", false);
-    cookie("menu_mini")?"":cookie("menu_mini", false);
-    console.info($(window).width());
-    //cookie("phone")?"":cookie("phone", (($(window).width() <= 768)?true:false));
-    cookie("phone")?"":cookie("phone", true);
+    // cookie("navbar")?"":cookie("navbar", false);
+    // cookie("menu")?"":cookie("menu", false);
+    // cookie("breadcrumb")?"":cookie("breadcrumb", false);
+    // cookie("container")?"":cookie("container", false);
+    // cookie("menu_mini")?"":cookie("menu_mini", false);
+
+    $(window).resize(function(){
+      cookie("phone", ($(window).width() <= 768)?true:false);
+    });
   }
 
   //设置悬浮

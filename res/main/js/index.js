@@ -19,14 +19,14 @@ define(function(require, exports, module) {
           selector: "#menu",
           itemClick:function(obj){
             var href = obj.attr("href");
-            if(href && href != "" && href != "#" && href != "javascript:;" && href != "javascript:void(0);"){ //判断是否合法 
+            var reg = /javascript|[^\w]/
+            if(href && reg.test(href)){ //判断是否合法 
               var index = layer.layer.load(null,0);
               $(".main_content").hide();
               $(".main_content").load(obj.attr("href"),function(response,status,xhr){      //ajax页面加载
                 layer.layer.close(index);
                 setting.setting();
                 $(".main_content").show();
-                console.info(cookie("phone"));
                 if(status === "success" && cookie("phone") === "true"){    //如果加载成功 再关闭菜单（也是防止打开子菜单时误关闭了菜单）
                   menu.togglePhoneMenu();
                 }
