@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>第三方插件说明</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+  <link rel="stylesheet" href="res/public/highlight/styles/default.css">
 <body>
 
   <!-- 面包屑导航 -->
@@ -22,17 +23,59 @@
     </div>
     <div class="alert alert-warning" role="alert">有些插件商用可能涉及到费用，请到官网查看相关协议</div>
     <div class="alert alert-info" role="alert">关于插件的详细使用说明，请自行参照官网文档</div>
-    <p>由于本系统使用seajs模块化加载，所以加载第三方插件和正常的引入有所不同。本说明就是针对seajs使用第三方插件的说明。</p>
+    <p>
+      由于本系统使用seajs模块化加载，所以加载第三方插件和正常的引入有所不同。本说明就是针对seajs使用第三方插件的说明。
+    </p>
     <h2>Jquery</h2>
-    <p>jquery由于大面积应用，所以jquery是直接标签引入的，这也是seajs2.3的使用规范。
-      <strong>
-        所以理论上在使用本系统不包含的其他jquery插件，可以不考虑seajs的模块化加载，也可以使用，但不推荐。推荐全部模块化加载，增加网页加载速度和执行效率。
-      </strong>
+    <p>
+      jquery由于大面积应用，所以jquery是直接标签引入的，这也是seajs2.3的使用规范。 <strong>所以理论上在使用本系统不包含的其他jquery插件，可以不考虑seajs的模块化加载，也可以使用，但不推荐。推荐全部模块化加载，增加网页加载速度和执行效率。</strong> 
       模块中也不需要引入jquery。
     </p>
     <h2>Zero Clipboard 复制插件</h2>
     <p>本系统已经引入该插件，并配置名字为：zeroClipboard</p>
-    <p>使用可以参考<a href="zeroClipboard.html" data-ajax="true">UI组件-zeroClipboard</a></p>
+    <p>
+      使用可以参考
+      <a href="zeroClipboard.html" data-ajax="true">UI组件-zeroClipboard</a>
+    </p>
+    <h2>JQuery cookie</h2>
+    <div class="highlight">
+      <span class="btn_copy">复制</span>
+      <pre>
+        <code class="js">
+          seajs.use(['jquery_cookie'], function(cookie){
+            cookie("op", "1");   //设置key为op 的值为 1
+            cookie("op");      //取出key为op的值
+          });
+        </code>
+      </pre>
+    </div>
+    <h2>highlight 代码着色高亮</h2>
+    <div class="highlight">
+      <span class="btn_copy">复制</span>
+      <pre>
+        <code class="html">
+          <link rel="stylesheet" href="res/public/highlight/styles/default.css">
+        </code>
+      </pre>
+    </div>
   </div>
+
+  <script>
+    seajs.use(['zeroClipboard','highlight', 'endCopy'], function(zero, highlight, endCopy){
+
+      highlight.initHighlightingOnLoad();
+      //代码着色 初始化
+      // $(document).ready(function() {
+      //   $('pre code').each(function(i, block) {
+      //     highlight.highlightBlock(block);
+      //   });
+      // });
+
+      //统一初始化 代码复制
+      // endCopy.init({btn:'span.btn_copy'});
+        
+
+    });
+  </script>
 </body>
 </html>

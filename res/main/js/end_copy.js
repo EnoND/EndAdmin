@@ -3,7 +3,8 @@
 * 实际项目中 基本无需该插件
 */
 define(function(require, exports, module){
-  var hijs = require('highlight');
+  // var hijs = require('highlight');
+  // var zero = require('zeroClipboard');
   var myDialog = require('alert');
 
   var defaults = {
@@ -40,7 +41,6 @@ define(function(require, exports, module){
       nowBtn = this;
       copyTip = myDialog.tip("点击复制", nowBtn);
     }).mouseleave(function(){
-      console.info("leave");
       myDialog.layer.close(copyTip);
     })
   }

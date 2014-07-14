@@ -64,7 +64,7 @@
 
 <script>
   if(window.location.protocol === "file:"){
-    $("#alertDanger").show();
+    $("#alertDanger").show();   //本地打开此页面给予不支持的提示
   }
   seajs.use(['zeroClipboard', 'highlight', 'endCopy'], function(zero, highlight, endCopy){
     var client = new ZeroClipboard( document.getElementById("copy-button") );   //copy-button是复制按钮的id
