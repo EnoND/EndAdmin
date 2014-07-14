@@ -12,7 +12,7 @@ define(function(require, exports, module){
   //加载
   function init(option){
     var options = $.extend(defaults, option);   //读取和初始化 公共参数
-    $(options.scope+" a[data-ajax='true']").on("mouseup", function(e){
+    $(document).on("mouseup", options.scope+" a[data-ajax='true']", function(e){
       var obj = $(this);
       var href = obj.attr("href");
       var reg = /javascript|[^\w]/
@@ -23,14 +23,14 @@ define(function(require, exports, module){
           layer.close(index);
           // setting.setting();
           $(".main_content").show();
-          menu.selectItem(obj.attr("href"));
           if(status === "success" && cookie("phone") === "true"){    //如果加载成功 再关闭菜单（也是防止打开子菜单时误关闭了菜单）
+            menu.selectItem(obj.attr("href"));
             menu.togglePhoneMenu(false);
           }
         });
       }
     });
-    $(options.scope+" a[data-ajax='true']").on("click", function(){   //取消a标签的href跳转
+    $(document).on("click", options.scope+" a[data-ajax='true']", function(){   //取消a标签的href跳转
       return false;
     });
   }
