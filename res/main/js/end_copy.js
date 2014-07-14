@@ -1,11 +1,10 @@
 /**
 * End Admin 统一加载复制按钮
+* 实际项目中 基本无需该插件
 */
 define(function(require, exports, module){
   var hijs = require('highlight');
   var myDialog = require('alert');
-  // var layer = require('layer').layer;
-  // var menu = require('menu');
 
   var defaults = {
     btn: '.btn_copy'    //复制按钮的选择器
@@ -15,22 +14,16 @@ define(function(require, exports, module){
   //加载
   function init(options){
     var options = $.extend(defaults, options);
-    // var client = new ZeroClipboard( document.getElementById("btn_copy") );   //copy-button是复制按钮的id
     var btn = $(options.btn);
     var client = new ZeroClipboard(btn);
     client.on("ready", function(readyEvent){    //加载事件
       client.on( "copy", function( event ) {    //点击按钮事件
-        // console.info(event);
-        // console.info($(event.target).next("pre").find("code").text());
         ZeroClipboard.setData({
           'text/plain': $(event.target).next("pre").find("code").text()   //动态设置要复制的内容
         });
       });
 
       client.on("aftercopy", function(event){   //点击按钮之后 触发 事件
-        // $("#copyShow").append(event.data["text/html"]+"");    //event.data["text/html"] 获取该格式的内容
-
-        // console.info(event.data["text/plain"]);
         var msg = "失败";
         if(event.success["text/plain"]){
           msg = "复制成功";
@@ -41,6 +34,7 @@ define(function(require, exports, module){
       });
     });
 
+    //tips小提示
     var nowBtn;
     $(options.btn).mouseenter(function(){
       nowBtn = this;

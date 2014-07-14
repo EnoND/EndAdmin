@@ -9,9 +9,9 @@ define(function(require, exports, module){
     // cookie("breadcrumb")?"":cookie("breadcrumb", false);
     // cookie("container")?"":cookie("container", false);
     // cookie("menu_mini")?"":cookie("menu_mini", false);
-
+    cookie("phone", ($(window).width() < 768)?true:false);
     $(window).resize(function(){
-      cookie("phone", ($(window).width() <= 768)?true:false);
+      cookie("phone", ($(window).width() < 768)?true:false);
     });
   }
 

@@ -65,7 +65,7 @@ define(function(require, exports, module){
 
 			//绑定鼠标移开事件
 			$(".bsMenu > li").mouseenter(function(){
-				$(this).addClass("open").find(".submenu").css("display","block");
+				$(this).addClass("open").find(">.submenu").css("display","block");
 			}).mouseleave(function(){
 				$("li.open").removeClass("open").find("ul").css("display","none");
 			});
@@ -73,15 +73,6 @@ define(function(require, exports, module){
 			$(".sidebar").removeClass("bsMenu_mini");
 			$(".bsMenu > li").unbind();		//移除事件
 		}
-	}
-
-	//监听浏览器大小变化
-	var resize = function(){
-		$(window).resize(function() {
-			if($(window).width() <= 768){
-
-			}
-		});
 	}
 
 	//根据href的值来选中 菜单中的某一项
