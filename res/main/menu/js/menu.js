@@ -65,7 +65,7 @@ define(function(require, exports, module){
 
 			//绑定鼠标移开事件
 			$(".bsMenu > li").mouseenter(function(){
-				$(this).addClass("open").find(".submenu").css("display","blcok");
+				$(this).addClass("open").find(".submenu").css("display","block");
 			}).mouseleave(function(){
 				$("li.open").removeClass("open").find("ul").css("display","none");
 			});
@@ -91,10 +91,14 @@ define(function(require, exports, module){
 
 	//手机版 打开或关闭菜单方法
 	var togglePhoneMenu = function(){
-		$(".sidebar").is(":hidden")?($(".sidebar").show(),$(this).addClass("active")):($(".sidebar").removeAttr("style"),$(this).removeClass("active"));
-		$(".sidebar").removeClass("bsMenu_mini");
-		$(".bsMenu > li").unbind();		//移除事件
-		cookie("menu_mini", false);
+		if(!animating){
+			animating = true;
+			// $(".sidebar").is(":hidden")?($(".sidebar").show(),$(this).addClass("active")):($(".sidebar").removeAttr("style"),$(this).removeClass("active"));
+			$(".sidebar").is(":hidden")?($(".sidebar").css({left:"-190px",display:"block"}),$(".sidebar").animate({left:0},speed,function(){animating=false;}),$(this).addClass("active")):($(".sidebar").animate({left:"-190px"},speed,function(){animating=false;$(this).removeClass("active").removeAttr("style");}));
+			$(".sidebar").removeClass("bsMenu_mini");
+			$(".bsMenu > li").unbind();		//移除事件
+			cookie("menu_mini", false);
+		}
 	}
 
 	return {
