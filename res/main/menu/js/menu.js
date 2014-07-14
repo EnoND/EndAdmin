@@ -48,10 +48,7 @@ define(function(require, exports, module){
 				}
 			}else{
 				$(".bsMenu a.active").removeClass("active");
-				item.addClass("active");
-				if(cookie("menu_mini") === "true"){
-					item.parents("li").find("a:first").addClass("active");
-				}
+				item.addClass("active").parents("li.open").find("a:first").addClass("active");		//选中点击的a标签  同时选中 根标签	
 				$(".sbMenu li.open").removeClass("open").find("ul.submenu").slideUp(speed);
 			}
 		}
@@ -67,7 +64,7 @@ define(function(require, exports, module){
 			$(".bsMenu > li").mouseenter(function(){
 				$(this).addClass("open").find(">.submenu").css("display","block");
 			}).mouseleave(function(){
-				$("li.open").removeClass("open").find("ul").css("display","none");
+				$("li.open").removeClass("open").find(">ul").css("display","none");
 			});
 		}else{
 			$(".sidebar").removeClass("bsMenu_mini");
