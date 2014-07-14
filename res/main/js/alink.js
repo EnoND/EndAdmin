@@ -4,6 +4,7 @@
 define(function(require, exports, module){
   var layer = require('layer').layer;
   var menu = require('menu');
+  var cookie = require("jquery_cookie");
 
   var defaults = {
     scope: ''
@@ -13,14 +14,21 @@ define(function(require, exports, module){
     var options = $.extend(defaults, option);   //读取和初始化 公共参数
     $(options.scope+" a[data-ajax='true']").on("mouseup", function(e){
       var obj = $(this);
-      var index = layer.load(null,0);
-      $(".main_content").hide();
-      $(".main_content").load($(this).attr("href"),function(){      //ajax页面加载
-        layer.close(index);
-        // setting.setting();
-        $(".main_content").show();
-        menu.selectItem(obj.attr("href"));
-      });
+      var href = obj.attr("href");
+      var reg = /javascript|[^\w]/
+      if(href && reg.test(href)){ //判断是否合法 
+        var index = layer.load(null,0);
+        $(".main_content").hide();
+        $(".main_content").load(href,function(response,status,xhr){      //ajax页面加载
+          layer.close(index);
+          // setting.setting();
+          $(".main_content").show();
+          menu.selectItem(obj.attr("href"));
+          if(status === "success" && cookie("phone") === "true"){    //如果加载成功 再关闭菜单（也是防止打开子菜单时误关闭了菜单）
+            menu.togglePhoneMenu(false);
+          }
+        });
+      }
     });
     $(options.scope+" a[data-ajax='true']").on("click", function(){   //取消a标签的href跳转
       return false;

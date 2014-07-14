@@ -1,11 +1,14 @@
 define(function(require, exports, module){
 	var cookie = require("jquery_cookie");		//引入jq
-	// require("../css/menu.css");
+	var layer = require("layer").layer;
+	// var alink = require("alink");
+
 	var animating = false;		//是否在动画中
 	var speed = 200;		//动画速度
 
 	var defaults = {
 		selector: ".bsMenu",		//选择器
+		beforeClick: function(){return true;},	//单击之前回调
 		itemClick: function(){}		//点击每项回调
 	};
 
@@ -51,8 +54,25 @@ define(function(require, exports, module){
 				item.addClass("active").parents("li.open").find("a:first").addClass("active");		//选中点击的a标签  同时选中 根标签	
 				$(".sbMenu li.open").removeClass("open").find("ul.submenu").slideUp(speed);
 			}
+			var bool = defaults.beforeClick(item);
+			bool = (bool==null)?true:bool;		//如果没有返回值，默认true
+			if(bool){		//返回 false 不继续执行
+				var href = item.attr("href");
+				var reg = /javascript|[^\w]/
+				if(href && reg.test(href)){ //判断是否合法 
+					var index = layer.load(null,0);		//打开loading
+					$(".main_content").hide();
+					$(".main_content").load(href,function(response,status,xhr){      //ajax页面加载
+					  layer.close(index);		//关闭loading
+					  $(".main_content").show();
+					  if(status === "success" && cookie("phone") === "true"){    //如果加载成功 再关闭菜单（也是防止打开子菜单时误关闭了菜单）
+					    togglePhoneMenu();
+					  }
+					});
+				}
+			}
+			defaults.itemClick(item);		//点击回调
 		}
-		defaults.itemClick(item);		//点击回调
 	}
 
 	//mini菜单切换
@@ -78,11 +98,12 @@ define(function(require, exports, module){
 	}
 
 	//手机版 打开或关闭菜单方法
-	var togglePhoneMenu = function(){
+	var togglePhoneMenu = function(bool){
 		if(!animating){
 			animating = true;
+			if(bool==null) bool = $(".sidebar").is(":hidden");
 			// $(".sidebar").is(":hidden")?($(".sidebar").show(),$(this).addClass("active")):($(".sidebar").removeAttr("style"),$(this).removeClass("active"));
-			$(".sidebar").is(":hidden")?($(".sidebar").css({left:"-190px",display:"block"}),$(".sidebar").animate({left:0},speed,function(){animating=false;}),$(this).addClass("active")):($(".sidebar").animate({left:"-190px"},speed,function(){animating=false;$(this).removeClass("active").removeAttr("style");}));
+			bool?($(".sidebar").css({left:"-190px",display:"block"}),$(".sidebar").animate({left:0},speed,function(){animating=false;}),$(this).addClass("active")):($(".sidebar").animate({left:"-190px"},speed,function(){animating=false;$(this).removeClass("active").removeAttr("style");}));
 			$(".sidebar").removeClass("bsMenu_mini");
 			$(".bsMenu > li").unbind();		//移除事件
 			cookie("menu_mini", false);

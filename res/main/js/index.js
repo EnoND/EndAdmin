@@ -16,26 +16,14 @@ define(function(require, exports, module) {
 	   //菜单加载，并处理单击事件
       seajs.use(["./res/main/menu/js/menu", 'cookieSetting','layer','jquery_cookie'], function(menu, setting, layer, cookie){
         menu.init({
-          selector: "#menu",
-          itemClick:function(obj){
-            var href = obj.attr("href");
-            var reg = /javascript|[^\w]/
-            if(href && reg.test(href)){ //判断是否合法 
-              var index = layer.layer.load(null,0);
-              $(".main_content").hide();
-              $(".main_content").load(obj.attr("href"),function(response,status,xhr){      //ajax页面加载
-                layer.layer.close(index);
-                setting.setting();
-                $(".main_content").show();
-                if(status === "success" && cookie("phone") === "true"){    //如果加载成功 再关闭菜单（也是防止打开子菜单时误关闭了菜单）
-                  menu.togglePhoneMenu();
-                }
-              });
-              
-            }
+          selector: "#menu",    //菜单选择器 默认  #menu;
+          beforeClick: function(obj){   //执行跳转前回调，返回false 停止跳转。默认返回true
+            // console.info(obj);
+          },
+          itemClick:function(obj){    //跳转后执行，无返回值
+            // console.info(obj);
           }
         });
-        // menu.mini();
       });
 
       //设置系统外观等设置
