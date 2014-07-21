@@ -14,7 +14,6 @@ define(function(require, exports, module){
   var copyTip;    //复制按钮的提示
   //加载
   function init(options){
-    console.info(zero);
     var options = $.extend(defaults, options);
     var btn = $(options.btn);
     var client = new zero(btn);

@@ -1,6 +1,7 @@
 define(function(require, exports, module){
 	var cookie = require("jquery_cookie");		//引入jq
 	var layer = require("layer").layer;
+	var setting = require("cookieSetting");
 	// var alink = require("alink");
 
 	var animating = false;		//是否在动画中
@@ -64,6 +65,7 @@ define(function(require, exports, module){
 					$(".main_content").hide();
 					$(".main_content").load(href,function(response,status,xhr){      //ajax页面加载
 					  layer.close(index);		//关闭loading
+					  setting.setting();
 					  $(".main_content").show();
 					  if(status === "success" && cookie("phone") === "true"){    //如果加载成功 再关闭菜单（也是防止打开子菜单时误关闭了菜单）
 					    togglePhoneMenu();
