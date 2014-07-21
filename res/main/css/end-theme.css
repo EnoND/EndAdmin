@@ -39,20 +39,19 @@ body{
     padding: 0;
 }
 .highlight code{
-    background: none;
-    padding: 0;
+    padding: 20px;
 }
 .btn_copy{
     background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px 0;
+    /*border: 1px solid #ccc;*/
+    border-radius: 0 4px;
     color: #777;
     cursor: pointer;
     display: block;
     font-size: 12px;
     padding: 5px 8px;
     position: absolute;
-    /*right: 0;*/
+    right: 0;
     top: 0;
     z-index: 10;
 }
