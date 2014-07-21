@@ -4,7 +4,7 @@
 */
 define(function(require, exports, module){
   // var hijs = require('highlight');
-  // var zero = require('zeroClipboard');
+  var zero = require('zeroClipboard');
   var myDialog = require('alert');
 
   var defaults = {
@@ -14,12 +14,13 @@ define(function(require, exports, module){
   var copyTip;    //复制按钮的提示
   //加载
   function init(options){
+    console.info(zero);
     var options = $.extend(defaults, options);
     var btn = $(options.btn);
-    var client = new ZeroClipboard(btn);
+    var client = new zero(btn);
     client.on("ready", function(readyEvent){    //加载事件
       client.on( "copy", function( event ) {    //点击按钮事件
-        ZeroClipboard.setData({
+        zero.setData({
           'text/plain': $(event.target).next("pre").find("code").text()   //动态设置要复制的内容
         });
       });

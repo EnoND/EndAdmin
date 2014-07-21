@@ -14,7 +14,7 @@ define(function(require, exports, module) {
       });
 
 	   //菜单加载，并处理单击事件
-      seajs.use(["./res/main/menu/js/menu", 'cookieSetting','layer','jquery_cookie', 'alink'], function(menu, setting, layer, cookie, alink){
+      seajs.use(["menu"], function(menu){
         menu.init({
           selector: "#menu",    //菜单选择器 默认  #menu;
           beforeClick: function(obj){   //执行跳转前回调，返回false 停止跳转。默认返回true

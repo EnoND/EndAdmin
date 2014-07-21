@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>第三方插件说明</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+  <link rel="stylesheet" href="res/public/highlight/zenburn.css">
+  
+<body>
+
+  <!-- 面包屑导航 -->
+  <ol class="breadcrumb tool_margin_bottom_0 tool_border_radius_0 tool_border_bottom_style">
+    <li>
+      <a href="index.html">首页</a>
+    </li>
+    <li class="active">原创插件说明</li>
+  </ol>
+  <div class="page_content">
+    <div class="page-header">
+      <h1>
+        原创插件说明
+        <small>myPlugsDocs.html</small>
+      </h1>
+    </div>
+    <div class="alert alert-info" role="alert">有些是原创插件，也有些是对第三方插件的封装。</div>
+    <h2>菜单（左侧菜单就是例子）<small>res/main/menu/js/menu.js</small></h2>
+    <p>
+      采用BS的列表样式，自制的手风琴效果的jquery菜单，配合系统的设置可以悬浮、缩放。理论上可以支持无限下级菜单，但由于下级菜单会比父菜单窄一点，这样多级菜单之后会影响用户使用。菜单的跳转推荐使用ajax方式（默认也是ajax方式）。
+    </p>
+    <p>菜单的结构如下：</p>
+    <div class="highlight">
+      <span class="btn_copy">复制</span>
+      <pre><code class=" hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"list-group tool_border_radius_0 bsMenu"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"menu"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"list-group-item"</span>&gt;</span>  <span class="hljs-comment">&lt;!-- 非ajax跳转，并带有图标，无子菜单 --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"index.html"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"active"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"glyphicon glyphicon-tower"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"menu_text"</span>&gt;</span>首页<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"list-group-item"</span>&gt;</span>  <span class="hljs-comment">&lt;!-- 有子菜单 --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>  <span class="hljs-comment">&lt;!-- 有子菜单的a建议不写href或href为"javascript:;" --&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"glyphicon glyphicon-pushpin"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"menu_text"</span>&gt;</span>插件列表
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"glyphicon glyphicon-chevron-down pull-right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"list-group"</span>&gt;</span>  <span class="hljs-comment">&lt;!-- 子菜单 --&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"list-group-item"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"plugs.html"</span> <span class="hljs-attribute">data-ajax</span>=<span class="hljs-value">"true"</span>&gt;</span>插件列表<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>  <span class="hljs-comment">&lt;!-- ajax跳转 只需多添加data-ajax="true"的属性 --&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"list-group-item"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"plugsDocs.html"</span> <span class="hljs-attribute">data-ajax</span>=<span class="hljs-value">"true"</span>&gt;</span>第三方插件说明<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"list-group-item"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"myPlugsDocs.html"</span> <span class="hljs-attribute">data-ajax</span>=<span class="hljs-value">"true"</span>&gt;</span>EndAdmin原创插件说明<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre>
+    </div>
+    <p>菜单的初始化（在res/main/js/index.js中）。如无特殊回调处理，init参数可为空:menu.init();</p>
+    <div class="highlight">
+      <span class="btn_copy">复制</span>
+      <pre><code class="javascript hljs ">seajs.use([<span class="hljs-string">"menu"</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(menu)</span></span>{
+  menu.init({
+    selector: <span class="hljs-string">"#menu"</span>,    <span class="hljs-comment">//菜单选择器 默认  #menu;</span>
+    beforeClick: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(obj)</span></span>{   <span class="hljs-comment">//执行跳转前回调，返回false 停止跳转。默认返回true</span>
+      <span class="hljs-comment">// console.info(obj);</span>
+    },
+    itemClick:<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(obj)</span></span>{    <span class="hljs-comment">//跳转后执行，无返回值</span>
+      <span class="hljs-comment">// console.info(obj);</span>
+    }
+  });
+});</code></pre>
+    </div>
+
+  <h2>alert <small>res/main/alert/alert.js</small></h2>
+  <p>是对layer的封装</p>
+  <div class="highlight">
+    <span class="btn_copy">复制</span>
+    <pre><code class=" hljs javascript">seajs.use([<span class="hljs-string">"alert"</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(myDialog)</span></span>{
+  <span class="hljs-comment">//html内容弹出框</span>
+  <span class="hljs-comment">//title:弹出框标题，不需要可以设为false</span>
+  <span class="hljs-comment">//html：弹出框html内容，支持html标签</span>
+  <span class="hljs-comment">//width，height：宽度和高度，默认为auto，可以不设置</span>
+  <span class="hljs-comment">//yes：确认按钮，function类型，可不设</span>
+  <span class="hljs-comment">//no：取消按钮，同上</span>
+  myDialog.html(title, html, width, height, yes, no);   
+  <span class="hljs-comment">//例子：</span>
+  myDialog.html(<span class="hljs-string">"信息"</span>, <span class="hljs-string">"&lt;h1&gt;hello EnoND&lt;/h1&gt;"</span>,<span class="hljs-string">"200px"</span>,<span class="hljs-string">"100px"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-built_in">console</span>.info(<span class="hljs-string">"确认"</span>);
+  },<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-built_in">console</span>.info(<span class="hljs-string">"取消"</span>);
+  });
+
+  <span class="hljs-comment">//dom弹窗</span>
+  <span class="hljs-comment">//和html弹窗至却别第2个参数dom</span>
+  <span class="hljs-comment">//dom是传入jquery的选择器，他会把选择器的对象dom弹出来</span>
+  myDialog.dom(title, dom, width, height, yes, no);
+  <span class="hljs-comment">//例子：</span>
+  myDialog.dom(<span class="hljs-string">"修改"</span>, <span class="hljs-string">"#modelEdit"</span>,<span class="hljs-string">"200px"</span>,<span class="hljs-string">"100px"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-built_in">console</span>.info(<span class="hljs-string">"确认"</span>);
+  },<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-built_in">console</span>.info(<span class="hljs-string">"取消"</span>);
+  });
+
+  <span class="hljs-comment">//tip弹窗</span>
+  <span class="hljs-comment">//他会悬浮在某个按钮或连接上</span>
+  <span class="hljs-comment">//content：文字内容</span>
+  <span class="hljs-comment">//obj:要吸引的dom对象</span>
+  <span class="hljs-comment">//parme:允许传这些属性{time: 自动关闭所需秒, maxWidth: 最大宽度, guide: 指引方向, style: tips样式（参加api表格一中的style属性）} </span>
+  myDialog.tip(content, obj, parme);
+  <span class="hljs-comment">//例子：</span>
+  myDialog.tip(<span class="hljs-string">"请点击"</span>,<span class="hljs-string">"a"</span>, {
+    time:<span class="hljs-number">3</span>
+  });
+});</code></pre>
+  </div>
+  </div>
+
+  <script>
+    seajs.use(['endCopy'], function(endCopy){
+
+      //统一初始化 代码复制
+      endCopy.init({btn:'span.btn_copy'});
+    });
+  </script>
+</body>
+</html>

@@ -47,14 +47,32 @@
 });</code></pre>
     </div>
     <h2>highlight 代码着色高亮</h2>
+    <p>首先引入如下css</p>
     <div class="highlight">
       <span class="btn_copy">复制</span>
-      <pre><code class=" hljs nix">&lt;link <span class="hljs-variable">rel=</span><span class="hljs-string">"stylesheet"</span> <span class="hljs-variable">href=</span><span class="hljs-string">"res/public/highlight/styles/default.css"</span>&gt;</code></pre>
+      <pre><code class=" hljs nix">&lt;link <span class="hljs-variable">rel=</span><span class="hljs-string">"stylesheet"</span> <span class="hljs-variable">href=</span><span class="hljs-string">"res/public/highlight/zenburn.css"</span>&gt;</code></pre>
     </div>
+    <p>由于不是专业代码教程网站，所以用到代码高亮比较少，直接到<a href="http://highlightjs.org/static/test.html" target="_blank">hljs官网demo</a>生成静态代码（在最下面），粘贴到响应位置即可。无需js操作。</p>
+    <h2>layer 弹弹出层插件</h2>
+    <p>定义模块时，引入‘layer’，还需.layer</p>
+    <div class="highlight">
+      <span class="btn_copy">复制</span>
+      <pre><code class=" hljs javascript">define(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(require, exports, module)</span></span>{
+  <span class="hljs-keyword">var</span> layer = <span class="hljs-built_in">require</span>(<span class="hljs-string">"layer"</span>).layer;
+});</code></pre>
+    </div>
+    <p>直接使用</p>
+    <div class="highlight">
+      <span class="btn_copy">复制</span>
+      <pre><code class=" hljs php">seajs.<span class="hljs-keyword">use</span>([<span class="hljs-string">'layer'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(myDialog)</span></span>{
+  <span class="hljs-keyword">var</span> layer = myDialog.layer;
+});</code></pre>
+    </div>
+    <p>具体使用说明或参数，请参考<a href="http://sentsin.com/jquery/layer/" target="_blank">layer官网</a>文档。</p>
   </div>
 
   <script>
-    seajs.use(['zeroClipboard', 'endCopy'], function(zero, endCopy){
+    seajs.use(['endCopy'], function(endCopy){
 
       //统一初始化 代码复制
       endCopy.init({btn:'span.btn_copy'});

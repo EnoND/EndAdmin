@@ -18,7 +18,7 @@
 <div class="page_content">
   <div class="page-header">
     <h1>
-      文字排版
+      复制插件
       <small>zeroClipboard.html</small>
     </h1>
   </div>
@@ -37,10 +37,9 @@
   </div>
 
   <h2>使用</h2>
-  <div class="">
+  <div class="highlight">
     <span class="btn_copy">复制</span>
-    <pre>
-      <code class="javascript hljs ">
+    <pre><code class="javascript hljs ">
         seajs.use([<span class="hljs-string">'zeroClipboard'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(zero)</span></span>{
           <span class="hljs-keyword">var</span> client = <span class="hljs-keyword">new</span> ZeroClipboard( <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"copy-button"</span>) );   <span class="hljs-comment">//copy-button是复制按钮的id</span>
 
@@ -56,8 +55,7 @@
             });
           });
         });
-      </code>
-    </pre>
+      </code></pre>
   </div>
 </div>
 
@@ -67,11 +65,11 @@
     $("#alertDanger").show();   //本地打开此页面给予不支持的提示
   }
   seajs.use(['zeroClipboard', 'endCopy'], function(zero, endCopy){
-    var client = new ZeroClipboard( document.getElementById("copy-button") );   //copy-button是复制按钮的id
+    var client = new zero( document.getElementById("copy-button") );   //copy-button是复制按钮的id
 
     client.on("ready", function(readyEvent){    //加载事件
       client.on( "copy", function( event ) {    //点击按钮事件
-        ZeroClipboard.setData({
+        zero.setData({
           'text/plain': $("#txtCopy").val()   //动态设置要复制的内容
         });
       });

@@ -1,6 +1,6 @@
 //重新封装的  layer 弹窗
 define(function(require, exports, module){
-	// var $ = require("jquery");
+
 	var layer = require("layer").layer;
 
 	//html弹窗，传入html内容
