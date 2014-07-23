@@ -34,6 +34,7 @@ seajs.config({
   alias: {
     // 'jquery': './res/public/jquery/jquery.min',
     'jquery_cookie': 'public/jquery/jquery.cookie',   //cookie插件
+    'jquery_json': 'public/jquery/jquery.json.min',     //json插件
     'bootstrap': 'public/bootstrap/js/bootstrap.min',   //BS
     'layer':'public/layer/layer.min',   //弹窗
     'alert': 'main/alert/alert',    //封装的弹窗
