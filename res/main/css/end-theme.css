@@ -59,3 +59,11 @@ body{
 body>a{
     display: none;
 }
+.del{
+    text-decoration: line-through !important;
+    color: #ccc;
+}
+.del:hover{
+    text-decoration: line-through !important;
+    color: #ccc;
+}
