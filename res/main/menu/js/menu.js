@@ -1,5 +1,5 @@
 define(function(require, exports, module) {
-	var cookie = require("jquery_cookie"); //引入jq
+	var cookie = require("jquery_cookie"); //引入cookie
 	var layer = require("layer").layer;
 	var setting = require("cookieSetting");
 

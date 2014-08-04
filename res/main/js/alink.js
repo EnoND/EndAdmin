@@ -7,7 +7,7 @@ define(function(require, exports, module){
   var cookie = require("jquery_cookie");
 
   var defaults = {
-    scope: ''
+    scope: 'body'
   };
   //加载
   function init(option){
@@ -31,6 +31,7 @@ define(function(require, exports, module){
       }
     });
     $(document).on("click", options.scope+" a[data-ajax='true']", function(){   //取消a标签的href跳转
+      console.info("link");
       return false;
     });
   }

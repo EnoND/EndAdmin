@@ -9,10 +9,10 @@ define(function(require, exports, module) {
   //初始化系统设置
   seajs.use(['cookieSetting', 'alink'], function(setting, alink) {
     setting.init();
-    // setting.setting();
-    alink.init({
-      scope: '.main_content'
-    });
+    
+    //加载处理a标签ajax跳转
+    alink.init({ scope: '.main_content' });
+    alink.init({ scope: 'nav' });
   });
 
   //菜单加载，并处理单击事件
