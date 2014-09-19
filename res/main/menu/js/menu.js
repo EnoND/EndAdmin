@@ -79,6 +79,17 @@ define(function(require, exports, module) {
 							togglePhoneMenu();
 						}
 					});
+					// $.get(href, function(data){
+					// 	if(typeof(data) === "string"){
+					// 		layer.close(index); //关闭loading
+					// 		$(".main_content").html(data).show();
+					// 		setting.setting();
+					// 		if (status === "success" && cookie("phone") === "true") { //如果加载成功 再关闭菜单（也是防止打开子菜单时误关闭了菜单）
+					// 			togglePhoneMenu();
+					// 		}
+					// 	}
+					// 	defaults.itemClick(item, data); //点击回调
+					// });
 				}
 			}
 			defaults.itemClick(item); //点击回调

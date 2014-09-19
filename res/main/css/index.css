@@ -15,7 +15,7 @@ body {
 .navbar-default {
     background-color: #2980b9;
     border: 0;
-    z-index: 1990;
+    z-index: 1000;
 }
 .navbar-default .navbar-brand,
 .navbar-default .navbar-brand:hover,
@@ -65,7 +65,7 @@ body {
     position: relative;
     width: 189px;
     padding: 0px;
-    z-index: 1989;
+    z-index: 999;
 }
 .sidebar:before {
     background-color: #f2f2f2;
