@@ -21,7 +21,7 @@
     margin: 0;
     padding: 0;
     position: relative;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 .bsMenu li a.active{
     border: none;

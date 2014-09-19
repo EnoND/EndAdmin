@@ -94,7 +94,7 @@ define(function(require, exports, module) {
 				$(".bsMenu > li").mouseenter(function() {
 					$(this).addClass("open").find(">.submenu").css("display", "block");
 				}).mouseleave(function() {
-					$("li.open").removeClass("open").find(">ul").css("display", "none");
+					$("li.open").removeClass("open").find(">.submenu").css("display", "none");
 				});
 				adminSetting.menu_mini = true;
 			}else{

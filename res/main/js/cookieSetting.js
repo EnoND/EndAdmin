@@ -64,6 +64,7 @@ define(function(require, exports, module) {
 
   //通过读取设置弹窗来设置悬浮
   function setting() {
+    adminSetting = getSetting();
     //导航悬浮
     if ($("#settingDialog input[value='1']").prop("checked")) {
       $(".navbar").addClass("navbar-fixed-top");
@@ -113,7 +114,7 @@ define(function(require, exports, module) {
 
   //保存设置
   var saveSetting = function(setting){
-    cookie("adminSetting", $.toJSON(setting));
+    cookie("adminSetting", JSON.stringify(setting));
   }
 
   //获得设置
